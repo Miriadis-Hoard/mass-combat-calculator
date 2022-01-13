@@ -1,0 +1,124 @@
+:root {
+  --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+  /* Font sizes */
+  --font-xxs: .625rem;
+  --font-xs: .75rem;
+  --font-s: .875rem;
+  --font-m: 1rem;
+  --font-l: 1.125rem;
+  --font-xl: 1.25rem;
+  --font-xxl: 1.375rem;
+
+  /* Color palette */
+  --color-background: #222;
+  --color-foreground: #aaa;
+  --color-strong: #ccc;
+  --color-weak: #666;
+  --color-muted: #444;
+  --color-accent: #cc2244;
+
+  /* Spacing */
+  --gap-xxs: .125rem;
+  --gap-xs: .25rem;
+  --gap-s: .5rem;
+  --gap-m: 1rem;
+  --gap-l: 1.5rem;
+  --gap-xl: 2rem;
+  --gap-xxl: 2.875rem;
+}
+
+
+/* Base styles */
+
+html {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-system);
+  line-height: 1.6;
+  max-width: 40rem;
+  margin: var(--gap-xl) auto;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    margin: var(--gap-m);
+  }
+}
+
+.title,
+.subtitle {
+  text-align: center;
+}
+
+.title {
+  font-size: var(--font-l);
+  margin: 0;
+}
+
+.subtitle {
+  color: var(--color-weak);
+  font-size: var(--font-s);
+  margin: 0 0 var(--gap-xl);
+}
+
+.calc {
+  align-items: center;
+  display: grid;
+  gap: var(--gap-l);
+  grid-template-columns: 1fr 1fr;
+}
+
+.calc__label,
+.calc__field,
+.calc__button,
+.calc__result {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+}
+
+.calc__field,
+.calc__button {
+  border: none;
+  border-radius: .2rem;
+}
+
+.calc__field {
+  background: var(--color-foreground);
+  font-size: var(--font-xxl);
+  padding: var(--gap-s);
+}
+
+.calc__field:focus {
+  background: var(--color-strong);
+  outline: none;
+}
+
+.calc__button {
+  background: var(--color-accent);
+  color: var(--color-strong);
+  cursor: pointer;
+  font-size: var(--font-xl);
+  padding: var(--gap-m);
+}
+
+.calc__result {
+  border: 2px solid var(--color-accent);
+  border-radius: .2rem;
+  color: var(--color-accent);
+  font-size: var(--font-xxl);
+  padding: var(--gap-s) var(--gap-m);
+  text-align: center;
+  vertical-align: middle;
+}
